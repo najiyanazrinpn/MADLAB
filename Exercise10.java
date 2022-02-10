@@ -1,32 +1,44 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".MainActivity">
+package com.example.exercise10;
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Check Box" />
-    <CheckBox
-        android:id="@+id/check1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="India"
-        android:onClick="select"/>
-    <CheckBox
-        android:id="@+id/check2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="South Korea"
-        android:onClick="select"/>
-    <CheckBox
-        android:id="@+id/check3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Switzerland"
-        android:onClick="select"/>
+import androidx.appcompat.app.AppCompatActivity;
 
-</LinearLayout>
+import android.os.Bundle;
+
+import android.view.View;
+import android.widget.CheckBox;
+import android.widget.Toast;
+
+public class MainActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+    }
+    public void select(View view){
+        boolean checked = ((CheckBox) view).isChecked();
+
+        switch (view.getId()) {
+            case R.id.check1:
+                if(checked)
+                    Toast.makeText(MainActivity.this, "India Selected", Toast.LENGTH_LONG).show();
+                else
+                    Toast.makeText(MainActivity.this, "India Removed", Toast.LENGTH_LONG).show();
+                break;
+            case R.id.check2:
+                if(checked)
+                    Toast.makeText(MainActivity.this, "South Korea Selected", Toast.LENGTH_LONG).show();
+                else
+                    Toast.makeText(MainActivity.this, "South Korea Removed", Toast.LENGTH_LONG).show();
+                break;
+            case R.id.check3:
+                if(checked)
+                    Toast.makeText(MainActivity.this, "Switzerland Selected", Toast.LENGTH_LONG).show();
+                else
+                    Toast.makeText(MainActivity.this, "Switzerland Removed", Toast.LENGTH_LONG).show();
+                break;
+
+        }
+    }
+
+}
