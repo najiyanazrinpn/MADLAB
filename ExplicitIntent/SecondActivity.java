@@ -1,4 +1,4 @@
-package com.example.explicitintent;
+package com.explicitintent2;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -15,7 +15,7 @@ public class SecondActivity extends AppCompatActivity {
 
         Bundle extras = getIntent().getExtras();
 
-        String s = extras.getString("value1");
+        String s = extras.getString("value");
         t = findViewById(R.id.tv);
         t.setText(t.getText()+" "+s);
 
